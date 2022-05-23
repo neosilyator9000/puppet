@@ -1,0 +1,10 @@
+DEVICE=tun1
+BOOTPROTO=none
+ONBOOT=yes
+DEVICETYPE=tunnel
+TYPE=GRE
+PEER_INNER_IPADDR=<%= @tun_static_remote %>
+PEER_OUTER_IPADDR=<%= @left %>
+MY_INNER_IPADDR=<%= @tun_static %>
+MTU=<%= @mtu %>
+<%= 192.168.88.0/24 via @tun_static_remote dev tun1 %>

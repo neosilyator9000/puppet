@@ -1,0 +1,13 @@
+conn home
+    left=<%= @left %>
+    leftid=fqdn:<%= @left %>
+    right=<%= @right %>
+    rightid=fqdn:<%= @right %>
+    authby=psk
+    auto=start
+    ike=aes256-sha256-ecp384
+    keyexchange=ikev2
+    esp=aes256-sha256-ecp384
+    type=tunnel
+    leftprotoport=47
+    rightprotoport=47

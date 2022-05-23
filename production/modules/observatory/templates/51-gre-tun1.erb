@@ -1,0 +1,8 @@
+auto tun1
+iface tun1 inet static
+address <%= @tun_static %>
+netmask <%= @tun_netmask %>
+pre-up ip tunnel add tun1 mode gre remote <%= @right %> local <%= @left %>
+post-up route add 192.168.88.0/24 via <%= @tun_static_remote %> 
+post-down ip tunnel del tun1
+mtu <%= @mtu %>
